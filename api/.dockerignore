@@ -1,0 +1,25 @@
+__pycache__/
+ *.py[cod]
+ *.pyo
+ 
+ # Virtual environment
+ venv/
+ env/
+ .venv/
+ .env/
+ .env.local
+ 
+ # Logs & junk
+ *.log
+ 
+ # OS and editor files
+ .DS_Store
+ *.swp
+ *.swo
+ .vscode/
+ .idea/
+ 
+ # PyInstaller output
+ build/
+ dist/
+ *.spec

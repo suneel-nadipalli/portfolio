@@ -1,0 +1,24 @@
+# Node modules and build output
+ node_modules
+ .next
+ out
+ 
+ # Dependency lock files (optional, if copying only package.json)
+ pnpm-lock.yaml
+ yarn.lock
+ 
+ # Logs
+ npm-debug.log*
+ yarn-debug.log*
+ yarn-error.log*
+ 
+ # Env & config
+ .env
+ .env.local
+ .env.development
+ .env.production
+ 
+ # OS & editor files
+ .DS_Store
+ .vscode
+ *.swp

@@ -1,0 +1,18 @@
+services:
+  api:
+    image: suneeln646/portfolio-api
+    container_name: portfolio-api
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./api/.env
+
+  ai-ladder-aui:
+    image: suneeln646/portfolio-ui
+    container_name: portfolio-ui
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./ui/.env.local
+    depends_on:
+      - api

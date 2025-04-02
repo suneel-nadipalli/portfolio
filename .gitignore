@@ -1,0 +1,43 @@
+# === GLOBAL SETTINGS ===
+.DS_Store
+.env
+.env.*
+*.log
+*.sqlite
+__pycache__/
+*.py[cod]
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+*.rej
+
+# === NODE / FRONTEND (ui/) ===
+ui/node_modules/
+ui/.next/
+ui/out/
+ui/package-lock.json
+ui/.env.local
+ui/.env.production
+ui/.npm/
+ui/.turbo/
+
+# === PYTHON / BACKEND (api/) ===
+api/venv/
+api/.venv/
+api/.env
+api/.env.*
+api/__pycache__/
+api/*.py[cod]
+api/instance/
+
+# === SYSTEM FILES ===
+.vscode/
+.idea/
+*.iml
+
+# === OS-SPECIFIC ===
+Thumbs.db
+ehthumbs.db
+desktop.ini

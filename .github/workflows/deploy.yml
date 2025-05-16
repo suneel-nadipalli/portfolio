@@ -33,6 +33,15 @@ jobs:
           username: ${{ secrets.VPS_SSH_USERNAME }}
           key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
           script: |
+
+            PID=$(sudo lsof -t -i:80) || true
+            if [ -n "$PID" ]; then
+              echo "Stopping nginx..."
+              sudo kill -9 $PID
+            else
+              echo "Nginx is not running."
+            fi
+
             cd ${{ secrets.VPS_SSH_DEPLOYMENT_PATH }}
             docker system prune -af --volumes
             git pull origin main

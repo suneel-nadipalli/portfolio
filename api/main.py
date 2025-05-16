@@ -17,4 +17,4 @@ load_dotenv()
 
 @app.get("/api/hello")
 def root():
-    return {"message": "Hello World"}
+    return {"message": "Hello World Updated!"}

@@ -1,0 +1,215 @@
+.skilltree-container {
+  background: black;
+  color: #22c55e;
+  font-family: 'VT323', monospace;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+.skilltree-title {
+  font-size: 2.75rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 50;
+}
+
+.skilltree-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.coin-tally {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 50;
+}
+
+.skilltree-flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.skilltree-flex-wrapper.with-preview {
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.skilltree-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  z-index: 40;
+}
+@media (min-width: 768px) {
+  .skilltree-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skilltree-section {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #22c55e;
+  background: linear-gradient(to bottom right, rgba(34, 197, 94, 0.05), rgba(34, 197, 94, 0.10), rgba(34, 197, 94, 0.15));
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.skilltree-section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding-bottom: 0.25rem;
+}
+
+.skilltree-underline {
+  height: 2px;
+  background-color: #22c55e;
+  margin-top: 0.25rem;
+  border-radius: 9999px;
+  width: 90%;
+  margin: auto;
+}
+
+.skilltree-tier {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.skilltree-token {
+  width: 8.5rem;
+  height: 9.5rem;
+  border: 2px solid;
+  border-radius: 0.325rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.token-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.token-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.skilltree-token.unlocked {
+  background-color: #111827;
+  border-color: #22c55e;
+}
+.skilltree-token.unlocked:hover {
+  transform: scale(1.05);
+}
+.skilltree-token.can-unlock {
+  background-color: #1f2937;
+  border-color: #eab308;
+}
+.skilltree-token.locked {
+  background-color: #1f2937;
+  border-color: #374151;
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+.token-locked-label {
+  position: absolute;
+  bottom: 0.4rem;
+  font-size: 1rem;
+  color: #facc15;
+}
+
+.side-preview-panel {
+  min-width: 280px;
+  max-width: 320px;
+  margin-left: 1.5rem;
+  margin-top: 0.25rem;
+  padding: 1.25rem;
+  border: 2px solid #22c55e;
+  border-radius: 0.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  color: #d1fae5;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.35);
+  font-family: 'VT323', monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.side-preview-title {
+  font-size: 1.5rem;
+  color: #86efac;
+}
+.side-preview-content {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.skilltree-flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.skilltree-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  transition: transform 0.3s ease;
+}
+@media (min-width: 768px) {
+  .skilltree-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skilltree-grid.shift-left {
+  transform: translateX(-160px);
+}
+
+.side-preview-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 280px;
+  max-width: 320px;
+  margin-left: 1rem;
+  background-color: #111827;
+  border: 2px solid #22c55e;
+  color: #d1fae5;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+  z-index: 60;
+  font-family: 'VT323', monospace;
+}

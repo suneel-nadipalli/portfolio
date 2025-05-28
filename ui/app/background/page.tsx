@@ -16,13 +16,10 @@ export default function BackgroundSkillTreePage() {
   const [unlocked, setUnlocked] = useState<Set<string>>(new Set(['gamer']));
   const [coins, setCoins] = useState(11);
   const [previewToken, setPreviewToken] = useState<Token | null>(null);
-  const [hoveredToken, setHoveredToken] = useState<Token | null>(null);
   const tokenRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [lines, setLines] = useState<
     { from: string; to: string; x1: number; y1: number; x2: number; y2: number }[]
   >([]);
-
-  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleUnlockAll = () => {
     const allIds = backgroundTree.flatMap(section =>
@@ -40,7 +37,7 @@ export default function BackgroundSkillTreePage() {
   };
 
   useEffect(() => {
-    const renderLines = () => {
+    const timeout = setTimeout(() => {
       const newLines: typeof lines = [];
 
       backgroundTree.forEach(section =>
@@ -70,27 +67,10 @@ export default function BackgroundSkillTreePage() {
       );
 
       setLines(newLines);
-    };
+    }, 100);
 
-    const timeout = setTimeout(renderLines, 50);
     return () => clearTimeout(timeout);
-  }, [unlocked, previewToken]);
-
-  const handleMouseEnter = (token: Token) => {
-    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    hoverTimeoutRef.current = setTimeout(() => {
-      setHoveredToken(token);
-      setPreviewToken(token);
-    }, 100);
-  };
-
-  const handleMouseLeave = () => {
-    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    hoverTimeoutRef.current = setTimeout(() => {
-      setHoveredToken(null);
-      setPreviewToken(null);
-    }, 100);
-  };
+  }, [unlocked]);
 
   return (
     <div className="skilltree-container">
@@ -115,7 +95,10 @@ export default function BackgroundSkillTreePage() {
 
       <h1 className="skilltree-title">🧠 The Sandbox Skill Tree</h1>
 
-      <div className="skilltree-flex-wrapper">
+      <div
+        className="skilltree-flex-wrapper"
+        onMouseLeave={() => setPreviewToken(null)}
+      >
         <div className={`skilltree-grid ${previewToken ? 'shift-left' : ''}`}>
           {backgroundTree.map(section => (
             <div key={section.id} className="skilltree-section">
@@ -137,8 +120,7 @@ export default function BackgroundSkillTreePage() {
                         ref={el => {
                           tokenRefs.current[token.id] = el;
                         }}
-                        onMouseEnter={() => handleMouseEnter(token)}
-                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => setPreviewToken(token)}
                         onClick={() => handleUnlockToken(token.id, token.parentIds)}
                         className={`skilltree-token ${
                           isUnlocked

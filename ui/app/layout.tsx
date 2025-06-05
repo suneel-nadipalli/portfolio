@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/NavBar"; // ✅ Import your NavBar component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +40,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.variable} ${vt323.variable} antialiased`}
       >
-        {children}
+        <NavBar /> {/* ✅ Add your NavBar here */}
+        <main style={{ paddingTop: '4rem' }}>
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -1,127 +1,38 @@
-export const backgroundTree = [
-  {
-    id: 'intro',
-    label: 'Introduction',
-    icon: '👋',
-    tiers: [
-      [
-        {
-          id: 'gamer',
-          icon: '🎮',
-          title: 'Gamer Since 2000',
-          content: 'Pixels shaped how I think. From NES to PS5.',
-          parentIds: [],
-        }
-      ],
-      [
-        {
-          id: 'builder',
-          icon: '🧘',
-          title: 'Builder Mentality',
-          content: 'I build to understand, teach, and explore.',
-          parentIds: ['gamer'],
-        },
-        {
-          id: 'thinker',
-          icon: '🧠',
-          title: 'Pattern Thinker',
-          content: 'Games taught me systems, logic, and flow.',
-          parentIds: ['gamer'],
-        }
-      ],
-      [
-        {
-          id: 'philosophy',
-          icon: '🌱',
-          title: 'Philosophy',
-          content: 'Balance between creativity, challenge, and purpose.',
-          parentIds: ['builder', 'thinker'],
-        }
-      ]
-    ]
-  },
+const bio = `
+Suneel Nadipalli is a seasoned AI/ML engineer with a passion for building intelligent systems. With a strong foundation in machine learning, natural language processing, and deep learning, Suneel has developed and deployed numerous AI applications. His expertise spans across various domains including LLMs, RAG, and generative AI. Suneel is also proficient in multiple programming languages and frameworks, making him a versatile developer capable of tackling complex challenges in the tech landscape.
+Suneel is currently focused on advancing his skills in AI and machine learning, particularly in the areas of large language models and their applications. He is dedicated to continuous learning and innovation, always seeking to push the boundaries of what is possible with AI technology. 
+Suneel's work is characterized by a commitment to excellence and a drive to create impactful solutions that leverage the power of AI. Whether it's through developing cutting-edge applications or contributing to open-source projects, Suneel is always looking for ways to make a difference in the field of artificial intelligence`;
 
-  {
-    id: 'education',
-    label: 'Education',
-    icon: '🏫',
-    tiers: [
-      [
-        {
-          id: 'cs-degree',
-          icon: '📚',
-          title: 'CS Degree',
-          content: 'Formal foundations in algorithms, systems, and theory.',
-          parentIds: [],
-        }
-      ],
-      [
-        {
-          id: 'ai-focus',
-          icon: '🤖',
-          title: 'AI/ML Focus',
-          content: 'Machine learning and model-driven learning.',
-          parentIds: ['cs-degree'],
-        },
-        {
-          id: 'xai',
-          icon: '🧩',
-          title: 'Explainable AI',
-          content: 'Understanding what the model sees and why.',
-          parentIds: ['cs-degree'],
-        }
-      ],
-      [
-        {
-          id: 'capstone',
-          icon: '📖',
-          title: 'Thesis / Capstone',
-          content: 'Research on interpretable models + system design.',
-          parentIds: ['ai-focus', 'xai'],
-        }
-      ]
-    ]
-  },
+export const sectionData = {
+  Background: [
+    { label: 'Name', value: 'Suneel Nadipalli' },
+    { label: 'Location', value: 'Sector 2814, Planet Earth' },
+    { label: 'Bio', value: bio },
+  ],
+};
 
+export const coreSkillsData = [
   {
-    id: 'work',
-    label: 'Work',
-    icon: '💼',
-    tiers: [
-      [
-        {
-          id: 'industry',
-          icon: '🛠️',
-          title: 'Industry Projects',
-          content: 'Built, broke, and fixed software at scale.',
-          parentIds: [],
-        }
-      ],
-      [
-        {
-          id: 'webapps',
-          icon: '🚀',
-          title: 'Webapps & Repos',
-          content: 'Side projects, packages, and experiments.',
-          parentIds: ['industry'],
-        },
-        {
-          id: 'papers',
-          icon: '🧪',
-          title: 'Research & Papers',
-          content: 'Applied theory to practice, authored work.',
-          parentIds: ['industry'],
-        }
-      ],
-      [
-        {
-          id: 'identity',
-          icon: '🗃️',
-          title: 'Developer Identity',
-          content: 'My toolkit, my preferences, my approach.',
-          parentIds: ['webapps', 'papers'],
-        }
-      ]
-    ]
+    category: '🧠 AI & ML',
+    skills: ['LLMs', 'RAG', 'Transformers', 'Generative AI', 'NLP', 'Neural Networks'],
+  },
+  {
+    category: '💻 Languages & Tools',
+    skills: ['Python', 'JavaScript', 'SQL', 'PyTorch', 'LangChain', 'React.js', 'FastAPI'],
+  },
+  {
+    category: '☁️ Cloud & Deployment',
+    skills: ['Digital Ocean', 'Heroku', 'Vercel', 'Docker', 'CI/CD', 'GitHub Actions'],
+  },
+  {
+    category: '🗄️ Databases / Vectorstores',
+    skills: ['Chroma', 'Pinecone', 'FAISS', 'MongoDB', 'SQLite'],
   }
+];
+
+export const otherToolsList = [
+  'Java', 'C++', 'Kotlin', 'Dart', 'HTML/CSS',
+  'Keras', 'NumPy', 'Pandas', 'Scikit-learn', 'XGBoost',
+  'Flutter', 'Node.js', 'Android', 'GCP', 'Azure',
+  'MySQL', 'MSSQL', 'GraphDB', 'Firestore'
 ];

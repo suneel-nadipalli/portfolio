@@ -20,8 +20,8 @@ body {
 }
 
 .terminal-window {
-  width: 96%;
-  height: 96%;
+  width: 90%;
+  height: 90%;
   max-width: 1600px;
   max-height: 950px;
   background-color: #0f172a;

@@ -98,3 +98,45 @@ body {
   background-color: #0b0c10; /* dark night mode */
 }
 
+@keyframes fadeInBlink {
+  0% { opacity: 0; }
+  30% { opacity: 0.2; }
+  60% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.animate-fade-blink {
+  animation: fadeInBlink 1.5s ease-out forwards;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes fadeBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.animate-fade-blink {
+  animation: fadeBlink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s step-start infinite;
+}

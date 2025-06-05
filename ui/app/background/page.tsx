@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import './background.css';
 import { sectionData, coreSkillsData, otherToolsList } from './data';
+import NavBar from '@/components/NavBar';
 
 type TabKey = 'Background' | 'Skills';
 
@@ -13,6 +14,7 @@ export default function BackgroundPage() {
 
   return (
     <div className="terminal-container">
+      <NavBar />
       <div className="terminal-window">
         <div className="page-title">Casefile: The Sandbox Architect</div>
 

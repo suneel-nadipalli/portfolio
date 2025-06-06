@@ -17,11 +17,11 @@ export default function NavBar() {
       <div className="screw bottom-right" />
 
       <div className="inventory-wrapper">
-        {routes.map((item, idx) => (
-          <Link key={idx} href={item.href} className="inventory-slot-link">
-            <div className={`inventory-slot ${pathname === item.href ? 'active-slot' : ''}`}>
-              <div className="inventory-icon">{item.icon}</div>
-              <div className="inventory-label">{item.label}</div>
+        {routes.map(({ icon: Icon, label, href }, idx) => (
+          <Link key={idx} href={href} className="inventory-slot-link">
+            <div className={`nav-hover-slot ${pathname === href ? 'active' : ''}`}>
+              <Icon className="nav-hover-icon" />
+              <span className="nav-hover-label">{label}</span>
             </div>
           </Link>
         ))}

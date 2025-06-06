@@ -1,6 +1,7 @@
 /* === 🔧 NAVBAR CONTAINER === */
 .inventory-navbar {
   width: 100%;
+  min-height: 90px;
   background: repeating-linear-gradient(
     45deg,
     #1f2937,
@@ -9,7 +10,7 @@
     #2e3748 20px
   );
   border-bottom: 3px solid #22c55e;
-  padding: 0.4rem 0.5rem;
+  padding: 0.8rem 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,11 +20,11 @@
   box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
 }
 
-/* === 🪛 PIXEL SCREWS (4 corners) === */
+/* === 🪛 PIXEL SCREWS === */
 .screw {
-  width: 21px;
-  height: 21px;
-  background-color: #22c55e; /* Screw body fill */
+  width: 18px;
+  height: 18px;
+  background-color: #22c55e;
   border-radius: 50%;
   position: absolute;
   box-shadow: inset 0 0 0 2px #16a34a, 0 0 2px #16a34a;
@@ -32,44 +33,20 @@
   justify-content: center;
 }
 
-/* Indented plus */
 .screw::before,
 .screw::after {
   content: '';
   position: absolute;
-  background-color: #1f2937; /* Matches navbar bg to look indented */
+  background-color: #1f2937;
   border-radius: 1px;
 }
+.screw::before { width: 10px; height: 2px; }
+.screw::after  { width: 2px; height: 10px; }
 
-.screw::before {
-  width: 10px;
-  height: 2px;
-}
-
-.screw::after {
-  width: 2px;
-  height: 10px;
-}
-
-.top-left {
-  top: 15px;
-  left: 15px;
-}
-
-.top-right {
-  top: 15px;
-  right: 15px;
-}
-
-.bottom-left {
-  bottom: 15px;
-  left: 15px;
-}
-
-.bottom-right {
-  bottom: 15px;
-  right: 15px;
-}
+.top-left     { top: 8px;  left: 10px; }
+.top-right    { top: 8px;  right: 10px; }
+.bottom-left  { bottom: 8px; left: 10px; }
+.bottom-right { bottom: 8px; right: 10px; }
 
 /* === 💾 SLOT WRAPPER === */
 .inventory-wrapper {
@@ -78,58 +55,86 @@
   width: 100%;
   max-width: 1100px;
   padding: 0.6rem 0.6rem;
+  gap: 2rem; /* ⬅️ Add this */
 }
 
-/* === 🎮 SLOT LINK === */
+/* === 🔗 LINK === */
 .inventory-slot-link {
   flex: 1;
   max-width: 160px;
   text-decoration: none;
 }
 
-/* === 📦 SLOT BOX === */
-.inventory-slot {
-  background: linear-gradient(to bottom, #0d1117, #1a1f2b);
-  border: 2px inset #0f766e;
-  border-radius: 6px;
-  box-shadow:
-    inset 2px 2px 6px rgba(0, 0, 0, 0.5),
-    0 2px 4px rgba(16, 185, 129, 0.4);
-  padding: 0.9rem 1.2rem;
-  font-family: 'VT323', monospace;
-  font-size: 1.35rem;
-  color: #16c473;
-  text-align: center;
+/* === 🎮 HOVER SLOT === */
+.nav-hover-slot {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  font-family: 'VT323', monospace;
+  color: #a7f3d0;
   cursor: pointer;
-  min-width: 100px;
+  transition: all 0.3s ease;
 }
 
-/* === ✨ HOVER EFFECT === */
-.inventory-slot:hover {
-  transform: scale(1.06);
-  background-color: #111827;
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+/* === 🌟 ICON === */
+.nav-hover-icon {
+  width: 2rem;
+  height: 2rem;
+  font-size: 3rem;
+  transition: transform 0.2s ease, color 0.3s ease;
+  filter: drop-shadow(0 0 3px #22c55e);
 }
 
-/* === ✅ ACTIVE SLOT === */
-.inventory-slot.active-slot {
-  background-color: #16a34a;
-  color: #72e29b; /* Change this to your preferred active font color */
-  font-weight: bold;
-  border: 2px solid #22c55e;
-  box-shadow: 0 0 12px #4ade80, 0 0 6px #22c55e; /* <-- Add this line */
+/* === 🏷️ LABEL (Morphs In) === */
+.nav-hover-label {
+  font-size: 1.75rem;
+  margin-left: 0.4rem;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  color: #86efac;
 }
 
-/* === 🔤 ICON + LABEL === */
-.inventory-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.3rem;
+.nav-hover-slot:hover .nav-hover-label {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
-.inventory-label {
-  font-size: 1.8rem;
+/* === ✅ ACTIVE SLOT UNDERLINE === */
+/* .nav-hover-slot.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: #22c55e;
+  box-shadow: 0 0 4px #22c55e;
+} */
+
+/* Base style for all icons */
+.nav-hover-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  filter: drop-shadow(0 0 3px #22c55e);
+  transition: transform 0.2s ease, filter 0.3s ease, color 0.3s ease;
+  color: #94a3b8; /* Gray-blue for inactive */
+}
+
+/* Brighter green on hover or active */
+.nav-hover-slot:hover .nav-hover-icon,
+.nav-hover-slot.active .nav-hover-icon {
+  color: #a7f3d0; /* Light green */
+  filter: drop-shadow(0 0 4px #22c55e);
+}
+
+/* Optional: Label glow too */
+.nav-hover-slot:hover .nav-hover-label,
+.nav-hover-slot.active .nav-hover-label {
+  color: #a7f3d0;
 }

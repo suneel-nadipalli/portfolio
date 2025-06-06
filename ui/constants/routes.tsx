@@ -1,9 +1,8 @@
 export const routes = [
-  { label: 'Home', href: '/' },
-  { label: 'Background', href: '/background' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Webapps', href: '/webapps' },
-  { label: 'Papers', href: '/papers' },
-  { label: 'Fun Stuff', href: '/fun' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Background', icon: '📝', href: '/background' },
+  { label: 'Projects', icon: '📁', href: '/projects' },
+  { label: 'Webapps', icon: '🌐', href: '/webapps' },
+  { label: 'Papers', icon: '📄', href: '/papers' },
+  { label: 'Fun Stuff', icon: '🎮', href: '/fun' },
+  { label: 'Contact', icon: '📩', href: '/contact' },
 ];

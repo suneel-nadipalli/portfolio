@@ -15,7 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: black;
-  padding: 2vh 2vw;
+  padding: 1vh 2vw;
   box-sizing: border-box;
 }
 
@@ -211,4 +211,25 @@ body {
 }
 .other-tools-toggle:hover {
   color: #fde68a;
+}
+
+.inventory-navbar {
+  padding: 0.2rem 1rem;
+  margin-bottom: 0;
+}
+
+.inventory-wrapper {
+  padding: 0.4rem 0.8rem;
+}
+
+.inventory-slot {
+  padding: 0.4rem 0.8rem;
+}
+
+.inventory-icon {
+  font-size: 1.3rem;
+}
+
+.inventory-label {
+  font-size: 1.2rem;
 }

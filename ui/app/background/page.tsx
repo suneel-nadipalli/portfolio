@@ -1,20 +1,20 @@
 'use client';
 
 import { useState } from 'react';
+import { Icon } from '@iconify/react';
 import './background.css';
-import { sectionData, coreSkillsData, otherToolsList } from './data';
+import { bioData, skills } from './data';
 
 type TabKey = 'Background' | 'Skills';
 
 export default function BackgroundPage() {
   const tabs: TabKey[] = ['Background', 'Skills'];
   const [activeTab, setActiveTab] = useState<TabKey>('Background');
-  const [showOtherTools, setShowOtherTools] = useState(false);
 
   return (
     <div className="terminal-container">
       <div className="terminal-window">
-        <div className="page-title">Casefile: The Sandbox Architect</div>
+        {/* <div className="page-title">Casefile: The Sandbox Architect</div>/ */}
 
         <div className="tab-header lowered-tabs">
           {tabs.map(tab => (
@@ -32,7 +32,7 @@ export default function BackgroundPage() {
           {activeTab === 'Background' && (
             <div className="background-grid">
               <div className="profile-details">
-                {sectionData.Background.map((item, i) => (
+                {bioData.Background.map((item, i) => (
                   <div key={i}>
                     <span className="label">{item.label}:</span> {item.value}
                   </div>
@@ -47,37 +47,22 @@ export default function BackgroundPage() {
           )}
 
           {activeTab === 'Skills' && (
-            <div className="skills-tab">
-              {coreSkillsData.map((group, i) => (
-                <div key={i} className="skill-category">
-                  <div className="category-title">{group.category}</div>
-                  <div className="skill-grid">
-                    {group.skills.map((skill, j) => (
-                      <div key={j} className="skill-badge">
-                        {skill}
-                      </div>
-                    ))}
-                  </div>
+            <div className="skills-holo-shelves">
+            {Object.entries(skills).map(([category, skills]) => (
+              <div key={category} className="holo-shelf-row">
+                <div className="floating-badge-row">
+                  {skills.map(skill => (
+                    <div key={skill.label} className="holo-badge">
+                      <div className="holo-disc" />
+                      <div className="holo-beam" />
+                      <Icon icon={skill.icon} className="holo-icon" />
+                      <div className="holo-label">{skill.label}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-
-              <div className="other-tools-toggle" onClick={() => setShowOtherTools(prev => !prev)}>
-                🧰 Other Tools & Languages {showOtherTools ? '▲' : '▼'}
+                <div className="engraved-label">{category}</div>
               </div>
-
-              {showOtherTools && (
-                <div className="skill-category">
-                  <div className="skill-grid">
-                    {otherToolsList.map((tool, i) => (
-                      <div key={i} className="skill-badge other">
-                        {tool}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div className="blinking-cursor">▌</div>
+            ))}
             </div>
           )}
         </div>

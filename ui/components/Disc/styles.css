@@ -1,0 +1,68 @@
+.umd-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  background: #0f172a;
+  border: 2px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 0 8px rgba(148, 163, 184, 0.2);
+  font-family: 'VT323', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 130px 130px 0 0;
+  padding-top: 1rem;
+}
+
+.umd-disc {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0f172a 0%, #1e293b 85%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.umd-disc-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed rgba(148, 163, 184, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.umd-disc-center {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(34, 197, 94, 0.2);
+  border-radius: 50%;
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  box-shadow: 0 0 4px rgba(34, 197, 94, 0.3) inset;
+  z-index: 2;
+}
+
+/* ✅ Restored tape-style label */
+.umd-label-tape {
+  position: absolute;
+  bottom: 10px;                     /* stick to bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;                       /* spans across most of the disc */
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px dashed rgba(34, 197, 94, 0.3);
+  padding: 0.4rem 0.75rem;
+  font-size: 1.1rem;
+  color: #a7f3d0;
+  text-align: center;
+  line-height: 1.2;
+  border-radius: 4px;
+  font-family: 'VT323', monospace;
+  z-index: 3;
+  white-space: normal;             /* allow wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3.5rem;              /* around 2 lines max */
+}

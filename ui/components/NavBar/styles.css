@@ -104,19 +104,6 @@
   transform: scaleX(1);
 }
 
-/* === ✅ ACTIVE SLOT UNDERLINE === */
-/* .nav-hover-slot.active::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 2px;
-  background-color: #22c55e;
-  box-shadow: 0 0 4px #22c55e;
-} */
-
 /* Base style for all icons */
 .nav-hover-icon {
   width: 2.5rem;

@@ -44,60 +44,6 @@ body {
   animation: fade 1s forwards;
 }
 
-/* home/page.tsx */
-
-.bg-cover {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-
-.chapter-bg {
-  background-image: url('/images/tiles/brick-bg.png');
-  background-repeat: repeat;
-  background-size: 64px 64px;
-  background-attachment: fixed;
-  background-position: top left;
-  transition: background-color 0.4s ease;
-}
-
-/* Time-of-day overlays */
-.chapter-bg.morning {
-  background-color: #f0e6d2; /* warm morning light */
-}
-.chapter-bg.afternoon {
-  background-color: #d4e6f9; /* brighter blue tone */
-}
-.chapter-bg.evening {
-  background-color: #3b2f4c; /* twilight purple */
-}
-.chapter-bg.night {
-  background-color: #0b0c10; /* dark night mode */
-}
-
-.chapter-bg {
-  /* background-image: url('/images/tiles/brick-bg.png'); */
-  background-repeat: repeat;
-  background-size: 64px 64px;
-  background-attachment: fixed;
-  background-position: top left;
-  transition: background-color 0.4s ease;
-}
-
-/* Time-of-day overlays */
-.chapter-bg.morning {
-  background-color: #f0e6d2; /* warm morning light */
-}
-.chapter-bg.afternoon {
-  background-color: #d4e6f9; /* brighter blue tone */
-}
-.chapter-bg.evening {
-  background-color: #3b2f4c; /* twilight purple */
-}
-.chapter-bg.night {
-  background-color: #0b0c10; /* dark night mode */
-}
-
 @keyframes fadeInBlink {
   0% { opacity: 0; }
   30% { opacity: 0.2; }
@@ -139,4 +85,74 @@ body {
   display: inline-block;
   width: 1ch;
   animation: blink 1s step-start infinite;
+}
+
+@keyframes fadeBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-fade-blink {
+  animation: fadeBlink 2s infinite;
+}
+
+.casefile-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 90vw;       /* 👈 90% of screen width */
+  height: 90vh;  
+  padding: 2rem 1rem;
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.15);
+}
+
+.casefile-container::before {
+  content: attr(data-watermark);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-family: 'VT323', monospace;
+  color: rgba(34, 197, 94, 0.3);
+  letter-spacing: 1rem;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Jutting vertical tab */
+.casefile-tab {
+  position: absolute;
+  left: -3rem; /* Adjust how far it juts out */
+  top: 0rem;   /* Adjust vertical position */
+  background: rgba(34, 197, 94, 0.15);
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  padding: 0.75rem 0.5rem;
+  writing-mode: vertical-rl; /* <- flips to vertical orientation */
+  transform: rotate(180deg); /* <- makes it top-to-bottom */
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #a7f3d0;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+  z-index: 10;
+  letter-spacing: 0.15rem;
+}
+.project-stream-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ⬅️ exactly 2 per row */
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .project-stream-grid {
+    grid-template-columns: 1fr; /* ⬅️ stack cards on smaller screens */
+  }
 }

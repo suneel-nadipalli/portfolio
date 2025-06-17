@@ -1,0 +1,69 @@
+.section-wrapper {
+  width: 85%;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  font-family: 'VT323', monospace;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-family: 'VT323', monospace;
+  font-size: 2.3rem;
+  color: #22c55e;
+  text-align: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #22c55e, transparent);
+  opacity: 0.8;
+  box-shadow: 0 0 10px #22c55e;
+  border-radius: 4px;
+}
+
+/* === Filled Variant === */
+.section-wrapper.filled {
+  background-color: #0f172a;
+  border: 2px solid #22c55e;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+/* === Transparent Variant (Glassy) === */
+.section-wrapper.transparent {
+  background-color: rgba(15, 23, 42, 0.65); /* #0f172a with 65% opacity */
+  border: 1px solid #22c55e;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 12px rgba(34, 197, 94, 0.25);
+}
+
+/* === Optional: Glass Variant for higher clarity */
+.section-wrapper.glass {
+  background: rgba(15, 23, 42, 0.35); /* subtle deep glassy tone */
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 90%;
+}
+
+
+
+/* === Content container === */
+.section-content {
+  position: relative;
+  z-index: 2;
+}

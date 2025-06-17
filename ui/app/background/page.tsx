@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import './background.css';
-import { bioData, skills } from './data';
+import { bioData, skills } from '../../components/Bio/data';
 
 type TabKey = 'Background' | 'Skills';
 

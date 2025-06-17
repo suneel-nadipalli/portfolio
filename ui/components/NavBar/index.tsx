@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import './NavBar.css';
-import { routes } from '@/constants/routes';
+import './styles.css';
+import { routes } from '@/components/NavBar/routes';
 
 export default function NavBar() {
   const pathname = usePathname();

@@ -1,14 +1,3 @@
-export const bioData = {
-  Background: [
-    { label: 'Name', value: 'Suneel Nadipalli' },
-    { label: 'Location', value: 'Sector 2814, Planet Earth' },
-    {
-      label: 'Bio',
-      value: `Suneel Nadipalli is a seasoned AI/ML engineer with a passion for building intelligent systems. With a strong foundation in ML, NLP, and deep learning, he's developed and deployed numerous AI applications across LLMs, RAG, and generative AI. Suneel is also proficient in a wide range of languages and frameworks, making him a versatile full-stack engineer.`
-    }
-  ]
-};
-
 export const skills = {
   'Data Science & AI': [
     { label: 'Python', icon: 'logos:python' },

@@ -1,0 +1,8 @@
+.webapps-stream-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem 2rem;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}

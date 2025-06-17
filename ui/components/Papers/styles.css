@@ -1,0 +1,8 @@
+.papers-stream-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  justify-items: center; /* ✅ centers items in their grid cell */
+  align-items: start;
+  padding-top: 1rem;
+}

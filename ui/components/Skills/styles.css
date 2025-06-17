@@ -1,0 +1,117 @@
+
+/* === Skills Section === */
+
+.floating-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.skills-holo-shelves {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.holo-badge {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'VT323', monospace;
+  color: #a7f3d0;
+  transition: transform 0.25s ease;
+  cursor: default;
+  z-index: 2;
+}
+
+.holo-icon {
+  font-size: 2.75rem;
+  z-index: 4;
+}
+
+.holo-label {
+  font-size: 1.75rem;
+  margin-top: 0.3rem;
+  z-index: 4;
+}
+
+/* 🟢 Disc base with rim */
+.holo-disc {
+  position: absolute;
+  bottom: 0px;
+  width: 90px;
+  height: 18px;
+  background: radial-gradient(circle at center, #22c55e 20%, #0f172a 90%);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.3);
+  z-index: 1;
+}
+
+/* 🔷 Vertical beam from center */
+.holo-beam {
+  position: absolute;
+  bottom: 8px;
+  width: 5px;
+  height: 60px;
+  background: linear-gradient(to top, rgba(34, 197, 94, 0.6), transparent);
+  border-radius: 4px;
+  z-index: 0;
+  animation: floatBeam 2.5s ease-in-out infinite;
+}
+
+@keyframes floatBeam {
+  0% {
+    height: 60px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 80px;
+    opacity: 0.9;
+  }
+  100% {
+    height: 60px;
+    opacity: 0.6;
+  }
+}
+
+.holo-badge:hover {
+  transform: translateY(-6px);
+  z-index: 5;
+}
+
+.engraved-label {
+  position: relative;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #16f3b0;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  font-family: 'VT323', monospace;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.engraved-label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #22c55e, transparent);
+  z-index: 0;
+}
+
+.engraved-label span {
+  background-color: #0f172a;
+  padding: 0 1rem;
+  z-index: 1;
+  position: relative;
+}
